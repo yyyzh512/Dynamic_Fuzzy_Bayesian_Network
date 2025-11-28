@@ -6,13 +6,6 @@ dyn_bayes_soft_cv.py (fixed + F1 + confusion matrix)
   • LR 概率表作为软观测
   • 10-Fold CV 打印先验、Φ、折间准确率与 F1-score (mean ± std)
   • 额外输出整体混淆矩阵 (Times New Roman, 9 pt；蓝色底；7 cm × 5 cm)
-
-修正：
-  1. 用 list(train_ids) 而非 set 作索引  →  TypeError 解决。
-  2. predict_sequence 迭代 DataFrame 行用 itertuples() 避免维度错误。
-  3. 计算并打印每折与整体 F1-score（macro-average）。
-  4. 输出 ACC 与 F1 统一采用小数格式，不再显示百分号。
-  5. **新增**：聚合 10 折预测并绘制混淆矩阵图 (confusion_matrix.png)
 """
 import numpy as np
 import pandas as pd
